@@ -1,0 +1,29 @@
+
+*{
+    block-size: border-box;
+}
+body{
+    background-color: bisque;
+    text-align: center;
+  
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#r {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+#box{
+    height: 200px;
+    width: 200px;
+    border: 1px solid blue;
+    text-align: center;
+}
+.box1 .box4 .box7{
+    border-left: 0;
+}
