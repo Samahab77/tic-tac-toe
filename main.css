@@ -25,6 +25,11 @@ section{
     text-align: center;
     font-size: 50px;
 }
+button{
+    height: 44px;
+    width: 88px;
+    margin-top: 50px;
+}
 /* .box1 .box4 .box7{
     border-left: 0;
 } */
