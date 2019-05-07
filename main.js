@@ -22,10 +22,14 @@ $('section #r .box').on('click',function(event){
         if(count%2==0){
             $(event.target).html('<h1>'+player2+'<h1>');
             xoBord[position] = player2
+            $(".trak").text( player1 +' turn');
+            $('audio#Click')[0].play();
         }else{
             $(event.target).html('<h1>' + player1 + '<h1>');
             xoBord[position] = player1
-            
+            $(".trak").text(player2 + ' turn');
+            $('audio#Click')[0].play();
+
     }
     $(event.target).off('click');
     
@@ -61,8 +65,11 @@ if (xoBord !=""){
     if (xoBord[0] === xoBord[1] && xoBord[0] === xoBord[2]  ){
          blockBoard();
         setTimeout(function(){
-            alert(xoBord[1] + " win");
-        },300); 
+            // swal(xoBord[1] + " win");
+            swal(xoBord[1], "Win!", "success");
+            $('audio#win')[0].play();
+            
+        },200); 
     }//r 2
    
 
@@ -70,7 +77,8 @@ if (xoBord !=""){
     {
         blockBoard();
         setTimeout(function(){
-          alert(xoBord[4] + " win");
+        //   alert(xoBord[4] + " win");
+            swal(xoBord[4], "Win!", "success");
         },300); 
        
      } // 3
@@ -78,7 +86,8 @@ if (xoBord !=""){
     {
         blockBoard();
         setTimeout(function(){
-           alert(xoBord[7] + " win");
+        //    alert(xoBord[7] + " win");
+            swal(xoBord[7], "Win!", "success");
         },300); 
        
     } //c 1
@@ -86,7 +95,8 @@ if (xoBord !=""){
     {
         blockBoard();
        setTimeout(function(){
-           alert(xoBord[3] + " win");  
+        //    alert(xoBord[3] + " win");  
+           swal(xoBord[3], "Win!", "success");
         },300); 
    
      }//c2
@@ -94,7 +104,8 @@ if (xoBord !=""){
     {
         blockBoard();
        setTimeout(function(){
-           alert(xoBord[4] + " win");   
+        //    alert(xoBord[4] + " win"); 
+           swal(xoBord[4], "Win!", "success");  
         },300); 
       
         }//c3
@@ -102,22 +113,27 @@ if (xoBord !=""){
     {
         blockBoard();
        setTimeout(function(){
-           alert(xoBord[5] + " win");   
+        //    alert(xoBord[5] + " win");   
+           swal(xoBord[5], "Win!", "success");
         },300); 
        
-        }//d 1
-    else if (xoBord[0] === xoBord[4] && xoBord[0] === xoBord[8])
+        }
+        //d 1
+    else if (xoBord[0] === xoBord[4] && xoBord[4] === xoBord[8])
     {
        blockBoard();
        setTimeout(function(){
-           alert(xoBord[4] + " win"); 
+        //    alert(xoBord[4] + " win"); 
+            swal(xoBord[4], "Win!", "success");
         },300); 
          
         }//d 2
+
     else if (xoBord[2] === xoBord[4] && xoBord[2] === xoBord[6] ) {
         blockBoard();
        setTimeout(function(){
-           alert(xoBord[4] + " win");  
+        //    alert(xoBord[4] + " win");  
+           swal(xoBord[4], "Win!", "success");
         },300); 
        
         }
@@ -125,8 +141,8 @@ if (xoBord !=""){
         blockBoard();
              count=1;
         setTimeout(function () {
-            alert("tie")
-            alert("game over")
+            swal("tie", "game over")
+           
         }, 300); 
   
     }
@@ -135,6 +151,7 @@ if (xoBord !=""){
    
     }
 $('button').on('click',function(){
+    
     location.href = "";
 
 
