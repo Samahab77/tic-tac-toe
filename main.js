@@ -41,113 +41,113 @@ $(document).ready(function(){
             xoBord[position] = player1
             $(".trak").text(player2 + ' turn');
             // $('audio#Click')[0].play();
-
+        }
         $(event.target).off('click');
         checkWinner();
         count++;
    
     }
-}
+    
 
     const checkWinner = function () {
 
-    if (xoBord !=""){
-        $(event.target).off('click');
-        if (xoBord[0] === xoBord[1] && xoBord[0] === xoBord[2]  ){
+        if (xoBord !=""){
+            $(event.target).off('click');
+            if (xoBord[0] === xoBord[1] && xoBord[0] === xoBord[2]  ){
+                blockBoard();
+                setTimeout(function(){
+                    // swal(xoBord[1] + " win");
+                    swal(xoBord[1], "Win!", "success");
+                    winAud();
+                    
+                },200); 
+            }//r 2
+        
+
+                else if (xoBord[3] === xoBord[4] && xoBord[3] === xoBord[5] )
+            {
+                blockBoard();
+                setTimeout(function(){
+                //   alert(xoBord[4] + " win");
+                    swal(xoBord[4], "Win!", "success");
+                    winAud();
+                },200); 
+            
+            } // 3
+            else if (xoBord[6] === xoBord[7] && xoBord[6] === xoBord[8] )
+            {
+                blockBoard();
+                setTimeout(function(){
+                //    alert(xoBord[7] + " win");
+                    swal(xoBord[7], "Win!", "success");
+                    winAud();
+                },200); 
+            
+            } //c 1
+            else if (xoBord[0] === xoBord[3] && xoBord[0] === xoBord[6] ) 
+            {
+                blockBoard();
+            setTimeout(function(){
+                //    alert(xoBord[3] + " win");  
+                swal(xoBord[3], "Win!", "success");
+                winAud();
+                },200); 
+        
+            }//c2
+            else if (xoBord[1] === xoBord[4] && xoBord[1] === xoBord[7] )
+            {
+                blockBoard();
+            setTimeout(function(){
+                //    alert(xoBord[4] + " win"); 
+                swal(xoBord[4], "Win!", "success");  
+                winAud();
+                },200); 
+            
+                }//c3
+            else if (xoBord[2] === xoBord[5] && xoBord[2] === xoBord[8] ) 
+            {
+                blockBoard();
+            setTimeout(function(){
+                //    alert(xoBord[5] + " win");   
+                swal(xoBord[5], "Win!", "success");
+                winAud();
+                },200); 
+            
+                }
+                //d 1
+            else if (xoBord[0] === xoBord[4] && xoBord[4] === xoBord[8])
+            {
             blockBoard();
             setTimeout(function(){
-                // swal(xoBord[1] + " win");
-                swal(xoBord[1], "Win!", "success");
+                //    alert(xoBord[4] + " win"); 
+                    swal(xoBord[4], "Win!", "success");
                 winAud();
+                },200); 
                 
-            },200); 
-        }//r 2
-    
+                }//d 2
 
-            else if (xoBord[3] === xoBord[4] && xoBord[3] === xoBord[5] )
-        {
-            blockBoard();
+            else if (xoBord[2] === xoBord[4] && xoBord[2] === xoBord[6] ) {
+                blockBoard();
             setTimeout(function(){
-            //   alert(xoBord[4] + " win");
+                //    alert(xoBord[4] + " win");  
                 swal(xoBord[4], "Win!", "success");
                 winAud();
-            },200); 
-        
-        } // 3
-        else if (xoBord[6] === xoBord[7] && xoBord[6] === xoBord[8] )
-        {
-            blockBoard();
-            setTimeout(function(){
-            //    alert(xoBord[7] + " win");
-                swal(xoBord[7], "Win!", "success");
-                winAud();
-            },200); 
-        
-        } //c 1
-        else if (xoBord[0] === xoBord[3] && xoBord[0] === xoBord[6] ) 
-        {
-            blockBoard();
-        setTimeout(function(){
-            //    alert(xoBord[3] + " win");  
-            swal(xoBord[3], "Win!", "success");
-            winAud();
-            },200); 
-    
-        }//c2
-        else if (xoBord[1] === xoBord[4] && xoBord[1] === xoBord[7] )
-        {
-            blockBoard();
-        setTimeout(function(){
-            //    alert(xoBord[4] + " win"); 
-            swal(xoBord[4], "Win!", "success");  
-            winAud();
-            },200); 
-        
-            }//c3
-        else if (xoBord[2] === xoBord[5] && xoBord[2] === xoBord[8] ) 
-        {
-            blockBoard();
-        setTimeout(function(){
-            //    alert(xoBord[5] + " win");   
-            swal(xoBord[5], "Win!", "success");
-            winAud();
-            },200); 
+                },200); 
+            
+                }
+                else if (count==9){
+                blockBoard();
+                    count=1;
+                setTimeout(function () {
+                    swal("tie", "game over")
+                
+                },200); 
         
             }
-            //d 1
-        else if (xoBord[0] === xoBord[4] && xoBord[4] === xoBord[8])
-        {
-        blockBoard();
-        setTimeout(function(){
-            //    alert(xoBord[4] + " win"); 
-                swal(xoBord[4], "Win!", "success");
-            winAud();
-            },200); 
-            
-            }//d 2
-
-        else if (xoBord[2] === xoBord[4] && xoBord[2] === xoBord[6] ) {
-            blockBoard();
-        setTimeout(function(){
-            //    alert(xoBord[4] + " win");  
-            swal(xoBord[4], "Win!", "success");
-            winAud();
-            },200); 
-        
-            }
-            else if (count==9){
-            blockBoard();
-                count=1;
-            setTimeout(function () {
-                swal("tie", "game over")
-            
-            },200); 
-    
-        }
 
         }
     
-        }
+    }
         // reset game button 
 
     const blockBoard = function(){
@@ -177,4 +177,4 @@ $(document).ready(function(){
     // $('#new').on('click', function () { 
     //        location.href = "";
     // })
-    })
+})
