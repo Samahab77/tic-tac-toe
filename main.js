@@ -173,8 +173,8 @@ $(document).ready(function(){
         $("section #r .box").empty();
         $('section #r .box').on('click', startGame)
     })
-    
-    // $('#new').on('click', function () { 
-    //        location.href = "";
-    // })
+    //new game 
+    $('#new').on('click', function () { 
+           location.href = "";
+    })
 })
