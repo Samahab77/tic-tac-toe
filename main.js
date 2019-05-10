@@ -4,6 +4,8 @@ $(document).ready(function(){
     let player1;
     let player2;
     let count = 1;
+    // xScore=0;
+    // oScore=0;
     let xoBord = [
         //0, 1, 2
         //3, 4, 5
@@ -62,17 +64,15 @@ $(document).ready(function(){
                     
                 },200); 
             }//r 2
-        
 
-                else if (xoBord[3] === xoBord[4] && xoBord[3] === xoBord[5] )
+            else if (xoBord[3] === xoBord[4] && xoBord[3] === xoBord[5] )
             {
                 blockBoard();
                 setTimeout(function(){
                 //   alert(xoBord[4] + " win");
                     swal(xoBord[4], "Win!", "success");
                     winAud();
-                },200); 
-            
+                },200);  
             } // 3
             else if (xoBord[6] === xoBord[7] && xoBord[6] === xoBord[8] )
             {
@@ -148,12 +148,13 @@ $(document).ready(function(){
         }
     
     }
-        // reset game button 
-
+        
+    //not allw to click on board any more
     const blockBoard = function(){
         
         $('section #r .box').off('click');
     }
+    //play audio hwen any one win
     function winAud(){
         $('audio#win')[0].play();
     }
@@ -177,4 +178,5 @@ $(document).ready(function(){
     $('#new').on('click', function () { 
            location.href = "";
     })
+    // $('#xscore').
 })
