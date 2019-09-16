@@ -15,7 +15,7 @@ $(document).ready(function(){
         "6", "7","8"
     ]
 
-    swal("do you want to play with X or O ", {
+    swal("Enter any letter to play with X ", {
         content: "input",
     })
         .then((value) => {
