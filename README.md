@@ -12,7 +12,8 @@
 ## Link to wireframes and user stories.
 
 
-## Document your planning and tell a story about your    development 
+## Document, planning and  story about development :
+
 - sketch html page first then build html file 
 - build css file then connected with html file  
 -   for java script and JQ  part the page linked with html file the problem solved by these steps  :
@@ -30,23 +31,23 @@
  
 ## process and problem-solving strategy.
 - 
-- creat X-O board array 
+- 
 
 
 ## List unsolved problems which would be fixed in future iterations.
 - count the score of the player X and O and decide who is the winner ,loser and tie 
 - playeing with AI 
 - change the the style of css and add mor feture to js to make it more interactive with user 
--  
+-  play with any one throw online
 
 
-## Describe how you solved for the winner
+## solved for the winner
 by insert if else function to check every cuolnm,row and daiognal box
 - if the any row , cluonm or daiognal  have full string value of X or O then win
 othewise the game will be tie. 
 
  
-## Describe how some of your favorite functions work
+## some  favorite functions work
 - check checkwinner function which is check the array to decide who is the winner O or X 
 by using if else .
 - 
